@@ -1,0 +1,167 @@
+vprint("********************************")
+print("PROGRAM FOR BANK DETAILS")
+print("********************************")
+class bank:
+        def __init__ (self):
+                self.num = int(input("ENTER ACCOUNT NUMBER:"))
+                self.name = input("ENTER NAME:")
+                self.bal = int(input("ENTER BALANCE:$"))
+                self.n = int(input("PRESS 1 TO WITHDRAW\nPRESS 2 TO DEPOSIT\n"))
+        def process (self):
+                if self.n==1:
+                        self.a = int(input("ENTER AMOUNT TO WITHDRAW: "))
+                        print("SUCCESS")
+                        print("YOUR BALANCE: ",self.bal-self.a)
+                elif self.n==2:
+                        self.a = int(input("ENTER AMOUNT FOR DEPOSIT: "))
+                        print("YOUR CURRENT BALANCE: ",self.bal+self.a)
+                        print("THANK YOU")
+b1=bank()
+b1.process()
+
+[21bcs035@mepcolinux ex3]$python3 bank.py
+********************************
+PROGRAM FOR BANK DETAILS
+********************************
+ENTER ACCOUNT NUMBER:5656
+ENTER NAME:shree
+ENTER BALANCE:$80000
+PRESS 1 TO WITHDRAW
+PRESS 2 TO DEPOSIT
+2
+ENTER AMOUNT FOR DEPOSIT: 90000
+YOUR CURRENT BALANCE:  170000
+THANK YOU
+[21bcs035@mepcolinux ex3]$cat book.py
+print("***********************************")
+print("PROGRAM FOR BOOK DETAILS")
+print("***********************************")
+class book:
+        def __init__ (self):
+                self.id = int(input("ENTER ID:"))
+                self.name = input("ENTER BOOK NAME:")
+                self.aname = input("ENTER AUTHOR NAME:")
+        def details(self):
+                self.p=0
+                self.n = int(input("PRESS 1 TO ADD BOOK\nPRESS 2 TO LEND BOOK"))
+                if self.n==1:
+                        self.p = "BOOK ADDED"
+                elif self.n==2:
+                        self.p = "BOOK CAN BE LENDED"
+        def display(self):
+                print("ID: ",self.id)
+                print("BOOK NAME: ",self.name)
+                print("AUTHOR NAME: ",self.aname)
+                print(self.p)
+b1=book()
+b1.details()
+b1.display()
+
+[21bcs035@mepcolinux ex3]$python3 book.py
+***********************************
+PROGRAM FOR BOOK DETAILS
+***********************************
+ENTER ID:4545
+ENTER BOOK NAME:rainbow
+ENTER AUTHOR NAME:lawrence
+PRESS 1 TO ADD BOOK
+PRESS 2 TO LEND BOOK2
+ID:  4545
+BOOK NAME:  rainbow
+AUTHOR NAME:  lawrence
+BOOK CAN BE LENDED
+[21bcs035@mepcolinux ex3]$cat emp.py
+print("***************************************")
+print("PROGRAM FOR EMPLOYEE DETAILS")
+print("***************************************")
+class employee:
+        def __init__ (self):
+                self.id = int(input("ENTER ID:"))
+                self.name = input("ENTER NAME:")
+                self.bp = int(input("ENTER BASIC PAY:"))
+                self.da,self.hra,self.ta,self.levy = 0,0,0,0
+                self.al,self.ded = 0,0
+                self.gross,self.net = 0,0
+        def calculate(self):
+                self.da = (5*100)*self.bp
+                self.hra = (0.2*100.0)*self.bp
+                self.ta = (1.7*100.0)*self.bp
+                self.levy = (0.4*100.0)*self.bp
+                self.al = self.da+self.hra
+                self.ded = self.ta+self.levy
+                self.gross = self.al-self.ded
+                self.net = self.gross+self.bp
+        def display(self):
+                print("ID:",self.id)
+                print("NAME:",self.name)
+                print("BASIC PAY:",self.bp)
+                print("ALLOWANCE:",self.al)
+                print("DEDUCTION:",self.ded)
+                print("GROSS SALARY:",self.gross)
+                print("NET SALARY:",self.net)
+e1=employee()
+e1.calculate()
+e1.display()
+
+[21bcs035@mepcolinux ex3]$python3 emp.py
+***************************************
+PROGRAM FOR EMPLOYEE DETAILS
+***************************************
+ENTER ID:5656
+ENTER NAME:thara
+ENTER BASIC PAY:70000
+ID: 5656
+NAME: thara
+BASIC PAY: 70000
+ALLOWANCE: 36400000.0
+DEDUCTION: 14700000.0
+GROSS SALARY: 21700000.0
+NET SALARY: 21770000.0
+[21bcs035@mepcolinux ex3]$cat student.py
+print("******************************************")
+print("PROGRAM FOR STUDENT DETAILS")
+print("*******************************************")
+class student:
+        def __init__ (self):
+                self.id = int(input("ENTER STUDENT ID:"))
+                self.name = input("ENTER NAME:")
+                self.m1 = int(input("ENTER MARK 1:"))
+                self.m2 = int(input("ENTER MARK 2:"))
+                self.m3 = int(input("ENTER MARK 3:"))
+                self.total = 0
+                self.avg = 0.0
+        def calculate(self):
+                self.total=self.m1+self.m2+self.m3
+                self.avg=self.total/3.0
+                if self.avg>95:
+                        self.grade = 'o'
+                elif self.avg>=85 and self.avg<=95:
+                        self.grade = 'A+'
+                elif self.avg>=75 and self.avg<85:
+                        self.grade = 'A'
+                else:
+                        self.grade = 'B'
+        def display(self):
+                print("STUDENT ID:",self.id)
+                print("STUDENT NAME:",self.name)
+                print("TOTAL:",self.total)
+                print("AVERAGE:",self.avg)
+                print("GRADE:",self.grade)
+s1=student()
+s1.calculate()
+s1.display()
+
+[21bcs035@mepcolinux ex3]$python3 student.py
+******************************************
+PROGRAM FOR STUDENT DETAILS
+*******************************************
+ENTER STUDENT ID:7878
+ENTER NAME:thara
+ENTER MARK 1:90
+ENTER MARK 2:90
+ENTER MARK 3:90
+STUDENT ID: 7878
+STUDENT NAME: thara
+TOTAL: 270
+AVERAGE: 90.0
+GRADE: A+
