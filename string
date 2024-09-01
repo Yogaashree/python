@@ -1,0 +1,54 @@
+class Word:
+    def __init__(self,string):
+        self.string=string
+    def __add__(self,o):
+        return self.string+o.string
+    def __eq__(self,o):
+        if(self.string==o.string):
+            print("Both strings are equal")
+        else:
+            print("Both strings are not equal")
+    def slicee(self):
+        lowr=int(input("Enter starting index:"))
+        highr=int(input("Enter ending index:"))
+        print(self.string[lowr:highr+1])
+    def repetition(self):
+        n=int(input("Enter no.of times the string to be repeated:"))
+        print("Repetition of string:")
+        print(self.string*n)
+
+[21bcs035@mepcolinux string]$cat main.py
+import string
+st1=input("Enter string1:")
+ob1=string.Word(st1)
+st2=input("Enter string2:")
+ob2=string.Word(st2)
+print("=================================================")
+print("PROGRAM TO OVERLOADING OPERATORS WITH STRING:")
+print("=================================================")
+print("Enter 1 to concatenate")
+print("Enter 2 to compare")
+print("Enter 3 to slice a string")
+print("Enter 4 for repetition of strings")
+print("Enter 5 to exit")
+print("-------------------------------------------------")
+while(1):
+        print("Enter your choice:")
+        choice=int(input())
+        if(choice==1):
+                print("CONCATENATION:")
+                print(ob1+ob2)
+        elif(choice==2):
+                print("COMPARISION:")
+                ob1==ob2
+        elif(choice==3):
+                print("SLICING:")
+                ob1.slicee()
+                ob2.slicee()
+        elif(choice==4):
+                print("REPETITION:")
+                ob1.repetition()
+                ob2.repetition()
+        elif(choice==5):
+                print("EXITING....")
+                break
