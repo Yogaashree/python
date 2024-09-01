@@ -1,0 +1,266 @@
+#program to calculate electricity bill
+print"**************************************"
+print"PROGRAM TO CALCULATE ELECTRICITY BILL"
+print"**************************************"
+unit=int(input("Enter the units of the current:"))
+if unit<=100:
+        amount=0
+else:
+        amount=(unit-100)*6
+print"Electricity bill:"
+print"Units used in a month:",unit
+print"Total amount:$",amount
+[21bcs035@mepcolinux ex1]$python bill.py
+**************************************
+PROGRAM TO CALCULATE ELECTRICITY BILL
+**************************************
+Enter the units of the current:600
+Electricity bill:
+Units used in a month: 600
+Total amount:$ 3000
+[21bcs035@mepcolinux ex1]$cat emp.py
+print "Program to print employee details"
+def salary(bp):
+        da=(50.0/100.0)*bp
+        hra=(15.0/100.0)*bp
+        bonus=8000
+        gs=bp+da+hra
+        ns=gs-bonus
+        print"------------------------------"
+        print"EMPLOYEE DETAILS :"
+        print"------------------------------"
+        print"BASIC PAY            :",bp
+        print"DEARNESS ALLOWANCE   :",da
+        print"HOUSE RENT ALLOWANCE :",hra
+        print"BONUS                :",bonus
+        print"GROSS SALARY         :",gs
+        print"NET SALARY           :",ns
+        print"-------------------------------"
+bp=int(input("Enter basic pay :"))
+salary(bp)
+
+[21bcs035@mepcolinux ex1]$python emp.py
+Program to print employee details
+Enter basic pay :60000
+------------------------------
+EMPLOYEE DETAILS :
+------------------------------
+BASIC PAY            : 60000
+DEARNESS ALLOWANCE   : 30000.0
+HOUSE RENT ALLOWANCE : 9000.0
+BONUS                : 8000
+GROSS SALARY         : 99000.0
+NET SALARY           : 91000.0
+-------------------------------
+[21bcs035@mepcolinux ex1]$cat factorial.py
+print " Program to print factorial of n numbers"
+def factorial(n):
+        if n==1:
+                return n
+        else:
+                return n*factorial(n-1)
+num=int(input("Enter the number:"))
+if num<0:
+        print"Factorial is not possible"
+elif num==0:
+        print"The factorial of 0 is 1"
+else:
+        print"The factorial of",num,"is", factorial(num)
+
+[21bcs035@mepcolinux ex1]$python factorial.py
+ Program to print factorial of n numbers
+Enter the number:6
+The factorial of 6 is 720
+[21bcs035@mepcolinux ex1]$cat fibo.py
+print "Program to print fibonacci series of given n numbers"
+def fibo(n):
+        if n<=1:
+                return n
+        else:
+                return (fibo(n-1)+fibo(n-2))
+a=int(input("Enter number of terms to be generated:"))
+if a<=0:
+        print"Enter a positive number"
+else:
+        print"Fibonacci series is:"
+        for i in range(a):
+                print(fibo(i))
+
+[21bcs035@mepcolinux ex1]$python fibo.py
+Program to print fibonacci series of given n numbers
+Enter number of terms to be generated:4
+Fibonacci series is:
+0
+1
+1
+2
+[21bcs035@mepcolinux ex1]$cat gcd.py
+print"-------------------------------------------"
+print"PROGRAM TO FIND GCD OF TWO NUMBERS"
+print"-------------------------------------------"
+a=int(input("Enter a number:"))
+b=int(input("Enter the second number:"))
+x=a*b
+i=1
+while i<=x:
+        if a%i==0 and b%i==0:
+                gcd=i
+        i=i+1
+print "GCD is:",gcd
+
+[21bcs035@mepcolinux ex1]$python gcd.py
+-------------------------------------------
+PROGRAM TO FIND GCD OF TWO NUMBERS
+-------------------------------------------
+Enter a number:6
+Enter the second number:4
+GCD is: 2
+[21bcs035@mepcolinux ex1]$cat multi.py
+print"----------------------------------------"
+print"PROGRAM FOR MULTIPLICATION TABLE"
+print"----------------------------------------"
+n=int(input("Enter the number:"))
+x=int(input("Enter the range:"))
+print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+print("  MULTIPLICATION TABLE")
+print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+i=1
+while i<=x:
+        print"\t",i,"*",n,"=",i*n
+        i=i+1
+print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+
+[21bcs035@mepcolinux ex1]$python multi.py
+----------------------------------------
+PROGRAM FOR MULTIPLICATION TABLE
+----------------------------------------
+Enter the number:6
+Enter the range:10
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  MULTIPLICATION TABLE
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        1 * 6 = 6
+        2 * 6 = 12
+        3 * 6 = 18
+        4 * 6 = 24
+        5 * 6 = 30
+        6 * 6 = 36
+        7 * 6 = 42
+        8 * 6 = 48
+        9 * 6 = 54
+        10 * 6 = 60
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[21bcs035@mepcolinux ex1]$cat prime.py
+print"---------------------------------------------------------"
+print"PROGRAM TO FIND WHETHER THE GIVEN NUMBER IS PRIME OR NOT"
+print"---------------------------------------------------------"
+n=int(input("Enter the limit:"))
+print("PRIME NUMBERS ARE")
+for i in range(1,n):
+        for j in range(2,i):
+                if i%j==0:
+                        break
+        else:
+                print(i)
+
+[21bcs035@mepcolinux ex1]$python prime.py
+---------------------------------------------------------
+PROGRAM TO FIND WHETHER THE GIVEN NUMBER IS PRIME OR NOT
+---------------------------------------------------------
+Enter the limit:4
+PRIME NUMBERS ARE
+1
+2
+3
+[21bcs035@mepcolinux ex1]$cat sphere.py
+#program to find the details of a sphere using radius
+print"****************************************************"
+print"PROGRAM TO CALCULATE DETAILS OF SPHERE"
+print"***************************************************"
+r=int(input("Enter the radius of a sphere:"))
+d=r*2
+a=4*3.14*3.14*r*r*r
+v=4/3*3.14*r*r*r
+c=2*3.14*r
+print"\nDetails of the sphere:"
+print"1.Diameter=",d
+print"2.Surface area=",a
+print"3.Volume=",v
+print"4.Circumference=",c
+[21bcs035@mepcolinux ex1]$python sphere.py
+****************************************************
+PROGRAM TO CALCULATE DETAILS OF SPHERE
+***************************************************
+Enter the radius of a sphere:5
+
+Details of the sphere:
+1.Diameter= 10
+2.Surface area= 4929.8
+3.Volume= 392.5
+4.Circumference= 31.4
+[21bcs035@mepcolinux ex1]$cat temparature.py
+#program for temparature conversion
+print"**********************************************************"
+print"PROGRAM FOR TEMPARATURE CONVERSION"
+print"**********************************************************"
+t=int(input("Enter 1 for celsius to fahrenheit:\nEnter 2 for fahrenheit to celsius:"))
+if(t==1):
+        c=int(input("Enter the temp in celsius:"))
+        f=(9/5)*c+32
+        print"The temparature in fahrenheit:",f
+else:
+        f=int(input("Enter the temparature in fahrenheit:"))
+        c=(5/9)*f-32
+        print"The temparature in celsius:",c
+[21bcs035@mepcolinux ex1]$python temparature.py
+**********************************************************
+PROGRAM FOR TEMPARATURE CONVERSION
+**********************************************************
+Enter 1 for celsius to fahrenheit:
+Enter 2 for fahrenheit to celsius:1
+Enter the temp in celsius:24
+The temparature in fahrenheit: 56
+[21bcs035@mepcolinux ex1]$cat word.py
+print "***********************************************************"
+print "PROGRAM TO CONVERT DIGIT TO WORD"
+print "***********************************************************"
+rev=0
+rem=0
+n=int(input("Enter any number to convert it into word :"))
+while n>0:
+        rem=n%10
+        rev=(rev*10)+rem
+        n=n/10
+while rev>0:
+        rem=rev%10
+        if rem==0:
+                print("ZERO\t")
+        elif rem==1:
+                print("ONE\t")
+        elif rem==2:
+                print("TWO\t")
+        elif rem==3:
+                print("THREE\t")
+        elif rem==4:
+                print("FOUR\t")
+        elif rem==5:
+                print("FIVE\t")
+        elif rem==6:
+                print("SIX\t")
+        elif rem==7:
+                print("SEVEN\t")
+        elif rem==8:
+                print("EIGHT\t")
+        elif rem==9:
+                print("NINE\t")
+        else :
+                print("INVALID DIGIT")
+        rev=rev/10
+
+[21bcs035@mepcolinux ex1]$python word.py
+***********************************************************
+PROGRAM TO CONVERT DIGIT TO WORD
+***********************************************************
+Enter any number to convert it into word :56
+FIVE
+SIX
