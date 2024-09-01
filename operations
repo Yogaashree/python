@@ -1,0 +1,49 @@
+class Comp:
+    def __init__(self,real=0,img=0):
+        self.real = real
+        self.img = img
+
+    def __add__(self, other): #overloading addition operator
+        c1=Comp()
+        c1.real = self.real + other.real
+        c1.img = self.img+ other.img
+        return c1
+    def __sub__(self, other): #overloading subtraction operator
+        c2=Comp()
+        c2.real = self.real - other.real
+        c2.img = self.img - other.img
+        return c2
+    def __mul__(self, other): #overloading multiplication operator
+        c3=Comp()
+        c3.real = (self.real*other.real)-(self.img*other.img)
+        c3.img = (self.real*other.real)+(self.img*other.img)
+        return c3
+    def __str__(self):
+        if(self.img>=0):
+            return str(self.real)+'+'+str(self.img)+'i'
+        else:
+            return str(self.real)+str(self.img)+'i'
+
+[21bcs035@mepcolinux comp]$cat main.py
+import comp
+print("PROGRAM TO PERFORM COMPLEX ADD,SUB,MUL USING OPERATOR OVERLOADING")
+r1 = int(input("Enter real part of 1st complex number: "))
+i1 = int(input("Enter imaginary part of 1st complex number: "))
+r2 = int(input("Enter real part of 2nd complex number: "))
+i2 = int(input("Enter imaginary part of 2nd complex number: "))
+ob1= comp.Comp(r1,i1)
+ob2= comp.Comp(r2,i2)
+while(1):
+    print("enter 1 to add")
+    print("enter 2 to Subtraction")
+    print("enter 3 to Multiplication")
+    choice=int(input("Enter your choice:"))
+    if(choice==1):
+         print("Addition of compex no:",ob1+ob2)
+    elif (choice==2):
+        print("Subtraction of compex no:",ob1-ob2)
+    elif(choice==3):
+        print("Multiplication : ",ob1*ob2)
+    else:
+        print("EXITING.....")
+        break
