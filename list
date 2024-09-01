@@ -1,0 +1,402 @@
+def square(x):
+        a = 0
+        a = x * x
+        print("AREA OF SQUARE IS ",a)
+        print("--------------------------------------------------------")
+def rectangle(l,b):
+        a = 0
+        a = l * b
+        print("AREA OF RECTANGLE IS ",a)
+        print("--------------------------------------------------------")
+def circle(r):
+        a = 0
+        a = 3.14 * r * r
+        print("AREA OF CIRCLE IS ",a)
+        print("--------------------------------------------------------")
+
+[21bcs035@mepcolinux area]$cat main.py
+import area
+print("***********************************************************")
+print("PROGRAM TO CALCULATE AREA OF SHAPES")
+print("***********************************************************")
+print("1.SQUARE")
+print("2.RECTANGLE")
+print("3.CIRCLE")
+print("4.EXIT")
+print("***********************************************************")
+n = int(input("Enter your choice: "))
+if n == 1:
+        x = int(input("Enter a side: "))
+        area.square(x)
+elif n == 2:
+        l,b = int(input("Enter the length: ")),int(input("Enter the breadth: "))
+        area.rectangle(l,b)
+elif n == 3:
+        r = int(input("Enter a radius: "))
+        area.circle(r)
+elif n == 4:
+        print("EXITED")
+else:
+        print("INVALID CHOICE")
+
+[21bcs035@mepcolinux area]$python main.py
+***********************************************************
+PROGRAM TO CALCULATE AREA OF SHAPES
+***********************************************************
+1.SQUARE
+2.RECTANGLE
+3.CIRCLE
+4.EXIT
+***********************************************************
+Enter your choice: 3
+Enter a radius: 6
+('AREA OF CIRCLE IS ', 113.03999999999999)
+--------------------------------------------------------
+[21bcs035@mepcolinux area]$cd ..
+[21bcs035@mepcolinux ex2]$cd arith
+[21bcs035@mepcolinux arith]$cat arith.py
+def addition(x,y):
+        z = 0
+        z = x + y
+        print("SUM of  ",x," ",y," is ",z)
+        print("----------------------------------------------------------")
+def subraction(x,y):
+        z = 0
+        z = x - y
+        print("DIFFERENCE of  ",x," ",y," is ",z)
+        print("------------------------------------------------------------")
+def multiplication(x,y):
+        z = 0
+        z = x * y
+        print("PRODUCT of  ",x," ",y," is ",z)
+        print("--------------------------------------------------------------")
+def division(x,y):
+        z = 0
+        z = x / y
+        print("DIVISION of  ",x," ",y," is ",z)
+        print("---------------------------------------------------------------")
+
+[21bcs035@mepcolinux arith]$cat main.py
+import arith
+print("*********************************************************")
+print("PROGRAM TO PERFORM BASIC ARITHMETIC OPERATIONS")
+print("*********************************************************")
+print("1.ADDITION")
+print("2.SUBRACTION")
+print("3.MULTIPLICATION")
+print("4.DIVISION")
+print("5.EXIT")
+print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+n = int(input("Enter your choice: "))
+if n == 1:
+        n1,n2 = int(input("Enter a number: ")),int(input("Enter a number: "))
+        arith.addition(n1,n2)
+elif n == 2:
+        n1,n2 = int(input("Enter a number: ")),int(input("Enter a number: "))
+        arith.subraction(n1,n2)
+elif n == 3:
+        n1,n2 = int(input("Enter a number: ")),int(input("Enter a number: "))
+        arith.multiplication(n1,n2)
+elif n == 4:
+        n1,n2 = int(input("Enter a number: ")),int(input("Enter a number: "))
+        arith.division(n1,n2)
+elif n == 5:
+        print("EXITED")
+else:
+        print("INVALID CHOICE")
+
+[21bcs035@mepcolinux arith]$python main.py
+*********************************************************
+PROGRAM TO PERFORM BASIC ARITHMETIC OPERATIONS
+*********************************************************
+1.ADDITION
+2.SUBRACTION
+3.MULTIPLICATION
+4.DIVISION
+5.EXIT
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Enter your choice: 3
+Enter a number: 5
+Enter a number: 8
+('PRODUCT of  ', 5, ' ', 8, ' is ', 40)
+--------------------------------------------------------------
+[21bcs035@mepcolinux arith]$cd ..
+[21bcs035@mepcolinux ex2]$cat dul.py
+cat: dul.py: No such file or directory
+[21bcs035@mepcolinux ex2]$cat dup.py
+print"*******************************************************************"
+print"PROGRAM TO PRINT THE LIST AFTER REMOVING THE DUPLICATE ELEMENTS"
+print"*******************************************************************"
+l=[0,0,0,11,23,11,45,65,89,3,3,5,5,"black","orange","black","violet","black"]
+print "BEFORE REMOVING DUPLICATES : l=",l
+
+for i in l:
+        if l.count(i)>1:
+                l.remove(i)
+print "AFTER REMOVING DUPLICATES : l=",l
+
+[21bcs035@mepcolinux ex2]$python dup.py
+*******************************************************************
+PROGRAM TO PRINT THE LIST AFTER REMOVING THE DUPLICATE ELEMENTS
+*******************************************************************
+BEFORE REMOVING DUPLICATES : l= [0, 0, 0, 11, 23, 11, 45, 65, 89, 3, 3, 5, 5, 'black', 'orange', 'black', 'violet', 'black']
+AFTER REMOVING DUPLICATES : l= [0, 23, 11, 45, 65, 89, 3, 5, 'orange', 'violet', 'black']
+[21bcs035@mepcolinux ex2]$cat fibo.py
+print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+print("FIBONACCI SERIES IN THE LIST")
+print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+n=int(input("enter the number of terms to be generated:"))
+fib=[]
+n1=0
+n2=1
+if(n==1):
+        fib.append(0)
+elif(n==2):
+        fib.append(0)
+        fib.append(1)
+else:
+        fib.append(n1)
+        fib.append(n2)
+        for i in range(2,n,1):
+                n3=n1+n2
+                fib.append(n3)
+                n1=n2
+                n2=n3
+print("*************************************************")
+print("FIBONACCI SERIES:")
+print(fib)
+print("*************************************************")
+
+[21bcs035@mepcolinux ex2]$python fibo.py
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+FIBONACCI SERIES IN THE LIST
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+enter the number of terms to be generated:5
+*************************************************
+FIBONACCI SERIES:
+[0, 1, 1, 2, 3]
+*************************************************
+[21bcs035@mepcolinux ex2]$cat count.py
+print("***************************************************************")
+print("PROGRAM TO COUNT THE STRINGS WHICH OBEY THE GIVEN CONDITION")
+print("***************************************************************")
+l=["abc","think","use","mam","shree","sis","dog","suba","121","926","44","786","456","567","dad"]
+l1=[]
+for i in l:
+        if(len(i)>=3 and i[0]==i[len(i)-1]):
+                l1.append(i)
+print ("NO OF ELEMENTS UNDER GIVEN CONDITION:"),len(l1)
+print (l1)
+
+
+[21bcs035@mepcolinux ex2]$python count.py
+***************************************************************
+PROGRAM TO COUNT THE STRINGS WHICH OBEY THE GIVEN CONDITION
+***************************************************************
+NO OF ELEMENTS UNDER GIVEN CONDITION: 4
+['mam', 'sis', '121', 'dad']
+[21bcs035@mepcolinux ex2]$cat list.py
+print("Program To Perform List Operations")
+print("--------------------------------------------")
+print("1.CREATING A LIST")
+list1=[13,10,95]
+list2=list(["purple","grey","black"])
+list3=list(range(13))
+print(list1)
+print(list2)
+print(list3)
+print("--------------------------------------------")
+print("2.LENGTH OF THE LIST")
+print("3.SUM OF THE LIST")
+print("4.MAXIMUM OF THE LIST")
+print("5.MINIMUM OF THE LIST")
+print("6.TO COUNT NO OF OCCURANCES")
+print("7.TO FIND THE INDEX OF THE ELEMENT")
+print("8.TO POP A ELEMENT")
+print("9.TO APPEND")
+print("10.TO EXTEND THE LIST")
+print("11.TO INSERT ELEMENTS")
+print("--------------------------------------------")
+ch=int(input("Enter the choice:"))
+if ch==2:
+        print("LENGTH OF THE LIST1")
+        print(len(list1))
+        print("LENGTH OF THE LIST2")
+        print(len(list2))
+        print("LENGTH OF THE LIST3")
+        print(len(list3))
+elif ch==3:
+        print("SUM OF LIST1")
+        print(sum(list1))
+        print("SUM OF LIST3")
+        print(sum(list3))
+elif ch==4:
+        print("MAXIMUM OF LIST1")
+        print(max(list1))
+        print("MAXIMUM OF LIST2")
+        print(max(list2))
+        print("MAXIMUM OF LIST3")
+        print(max(list3))
+elif ch==5:
+        print("MINIMUM OF LIST1")
+        print(min(list1))
+        print("MINIMUM OF LIST2")
+        print(min(list2))
+        print("MINIMUM OF LIST3")
+        print(min(list3))
+elif ch==6:
+        print(list1.count(14))
+        print(list2.count("purple"))
+        print(list3.count(1))
+elif ch==7:
+        print(list1.index(95))
+        print(list2.index("purple"))
+        print(list3.index(12))
+elif ch==8:
+        print(list1.pop())
+elif ch==9:
+        list1.append(19,95)
+        print(list1)
+        list2.append("white")
+        print(list2)
+elif ch==10:
+        list1.extend(list2)
+        print(list1)
+elif ch==11:
+        list1.insert(19)
+        print(list1)
+elif ch==12:
+        list1.sort()
+        print(list1)
+
+[21bcs035@mepcolinux ex2]$python list.py
+Program To Perform List Operations
+--------------------------------------------
+1.CREATING A LIST
+[13, 10, 95]
+['purple', 'grey', 'black']
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+--------------------------------------------
+2.LENGTH OF THE LIST
+3.SUM OF THE LIST
+4.MAXIMUM OF THE LIST
+5.MINIMUM OF THE LIST
+6.TO COUNT NO OF OCCURANCES
+7.TO FIND THE INDEX OF THE ELEMENT
+8.TO POP A ELEMENT
+9.TO APPEND
+10.TO EXTEND THE LIST
+11.TO INSERT ELEMENTS
+--------------------------------------------
+Enter the choice:4
+MAXIMUM OF LIST1
+95
+MAXIMUM OF LIST2
+purple
+MAXIMUM OF LIST3
+12
+[21bcs035@mepcolinux ex2]$python list.py
+Program To Perform List Operations
+--------------------------------------------
+1.CREATING A LIST
+[13, 10, 95]
+['purple', 'grey', 'black']
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+--------------------------------------------
+2.LENGTH OF THE LIST
+3.SUM OF THE LIST
+4.MAXIMUM OF THE LIST
+5.MINIMUM OF THE LIST
+6.TO COUNT NO OF OCCURANCES
+7.TO FIND THE INDEX OF THE ELEMENT
+8.TO POP A ELEMENT
+9.TO APPEND
+10.TO EXTEND THE LIST
+11.TO INSERT ELEMENTS
+--------------------------------------------
+Enter the choice:7
+2
+0
+12
+[21bcs035@mepcolinux ex2]$python list.py
+Program To Perform List Operations
+--------------------------------------------
+1.CREATING A LIST
+[13, 10, 95]
+['purple', 'grey', 'black']
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+--------------------------------------------
+2.LENGTH OF THE LIST
+3.SUM OF THE LIST
+4.MAXIMUM OF THE LIST
+5.MINIMUM OF THE LIST
+6.TO COUNT NO OF OCCURANCES
+7.TO FIND THE INDEX OF THE ELEMENT
+8.TO POP A ELEMENT
+9.TO APPEND
+10.TO EXTEND THE LIST
+11.TO INSERT ELEMENTS
+--------------------------------------------
+Enter the choice:10
+[13, 10, 95, 'purple', 'grey', 'black']
+[21bcs035@mepcolinux ex2]$cat oddeven.py
+#to sort the odd even elements into seperate list
+print("********************************************************")
+print("PROGRAM TO SORT ODD AND EVEN ELEMENTS IN A LIST")
+print("*******************************************************")
+list1=list(range(10))
+print("LIST:")
+print(list1)
+odd=[]
+even=[]
+for i in list1:
+        if i%2==0:
+                even.append(i)
+print("EVEN LIST:")
+print(even)
+for i in list1:
+        if i%2!=0:
+                odd.append(i)
+print("ODD LIST:")
+print(odd)
+print("------------------------END----------------------------")
+
+[21bcs035@mepcolinux ex2]$python oddeven.py
+********************************************************
+PROGRAM TO SORT ODD AND EVEN ELEMENTS IN A LIST
+*******************************************************
+LIST:
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+EVEN LIST:
+[0, 2, 4, 6, 8]
+ODD LIST:
+[1, 3, 5, 7, 9]
+------------------------END----------------------------
+[21bcs035@mepcolinux ex2]$cat remove.py
+#program to remove 0,4,5th element in the list
+print("******************************************************")
+print("PROGRAM TO REMOVE ELEMENTS IN THE LIST")
+print("******************************************************")
+list1=[0,1,2,3,4,5,6,7]
+print(list1)
+for i in range(0,8):
+        if i==0:
+                list1.remove(i)
+        if i==4:
+                list1.remove(i)
+        if i==5:
+                list1.remove(i)
+print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+print("UPDATED LIST")
+print(list1)
+print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+
+[21bcs035@mepcolinux ex2]$python remove.py
+******************************************************
+PROGRAM TO REMOVE ELEMENTS IN THE LIST
+******************************************************
+[0, 1, 2, 3, 4, 5, 6, 7]
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+UPDATED LIST
+[1, 2, 3, 6, 7]
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
